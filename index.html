@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel='stylesheet' href="css/style.css">
+
+    <script src="./src/hideout_upgrades.js"></script>
+    <script src="./src/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <h3>Shopping List</h3>
+            <table class="u-full-width">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th class="item_catagory">Catagory</th>
+                        <th class="item_amt_header">Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="shopping_list">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <h3>Upgrade List</h3>
+            <div class="row">
+                <input id="upgrade_search_bar" type="text" placeholder="Search Upgrades...">
+            </div>
+            <div id="upgrade_list"></div>
+        </div>
+    </div>
+</body>
+
+</html>
