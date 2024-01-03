@@ -13,7 +13,7 @@ body {
 }
 
 .item_catagory {
-    text-align: left;
+    text-align: right;
 }
 
 .item_amt_header {
@@ -21,9 +21,13 @@ body {
 }
 
 .item_amt {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    text-align: right;
+    background-color: white;
+    cursor: pointer;
+}
+
+.item_amt:hover {
+    background-color: lightgray;
 }
 
 .item_amt .modifier {

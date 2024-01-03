@@ -56,12 +56,12 @@ const displayShoppingList = (shoppingList) => {
         shopping_list_holder.appendChild(element)
     })
 
-    let upgrades = document.createElement('p')
-    upgrades.innerText = 'Upgrades: ' + shoppingList.map(upgrade => upgrade.name).join(', ')
-    shopping_list_holder.appendChild(upgrades)
+    // let upgrades = document.createElement('p')
+    // upgrades.innerText = 'Upgrades: ' + shoppingList.map(upgrade => upgrade.name).join(', ')
+    // shopping_list_holder.appendChild(upgrades)
 }
 
-const modifyItem = (itemId, amt) => {
+const modifyItem = (itemId) => {
     let item = shoppingListItems.find(i => i.id === itemId)
 
     if (!item) {
@@ -69,7 +69,13 @@ const modifyItem = (itemId, amt) => {
         return
     }
 
-    item.amt += amt
+    let amt = parseInt(prompt(`${itemId} Collected`))
+
+    if (!amt) {
+        return
+    }
+
+    item.amt -= amt
     item.amt = Math.max(Math.min(item.amt, item.total), 0)
 
     displayShoppingList(shoppingList)
@@ -79,13 +85,32 @@ const createItemElement = (item, amt, total) => {
     let element = document.createElement('tr')
     element.className = 'item_element'
 
-    element.innerHTML = `
+    let itemData = upgrade_items.find(i => i.id === item)
+
+    if (!itemData) {
+        console.dir(item)
+
+        element.innerHTML = `
         <td>${item}</td>
-        <td class="item_catagory">Unset</td>
-        <td class="item_amt">
-            <div class="modifier" onClick="modifyItem('${item}', -1)">-</div>
+        <td class="item_catagory">unset</td>
+        <td class="item_amt" onClick="modifyItem('${item}')">
             <div>${amt}/${total}</div>
-            <div class="modifier" onClick="modifyItem('${item}', 1)">+</div>
+        </td>
+        `
+
+        return element
+    }
+
+    /*
+        <div class="modifier" onClick="modifyItem('${item}', -1)">-</div>
+        <div>${amt}/${total}</div>
+        <div class="modifier" onClick="modifyItem('${item}', 1)">+</div>
+    */
+    element.innerHTML = `
+        <td>${itemData.display_name}</td>
+        <td class="item_catagory">${itemData.catagory}</td>
+        <td class="item_amt" onClick="modifyItem('${item}')">
+            <div>${amt}/${total}</div>
         </td>
     `
 
