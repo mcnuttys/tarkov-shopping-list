@@ -69,7 +69,14 @@ const modifyItem = (itemId) => {
         return
     }
 
-    let amt = parseInt(prompt(`${itemId} Collected`))
+    let amt = 0
+    let itemData = upgrade_items.find(i => i.id === itemId)
+
+    if (itemData) {
+        amt = parseInt(prompt(`${itemData.display_name} Collected`))
+    } else {
+        amt = parseInt(prompt(`${itemId} Collected`))
+    }
 
     if (!amt) {
         return
