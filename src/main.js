@@ -1,14 +1,13 @@
-let shopping_list_holder, upgrade_list_holder
+let shopping_list_holder, selected_upgrade_list_holder, upgrade_list_holder
 
 let shoppingList = []
 let shoppingListItems = []
 let upgradeList = []
 
-window.onload = () => {
-    console.dir('setup')
-
+window.onload = async () => {
     // Display shopping list
     shopping_list_holder = document.querySelector('#shopping_list')
+    selected_upgrade_list_holder = document.querySelector('#selected_upgrade_list')
     displayShoppingList(shoppingList)
 
     // Display upgrade list
@@ -30,8 +29,7 @@ const sortShoppingList = () => {
 
 const displayShoppingList = (shoppingList) => {
     clearChildElements(shopping_list_holder)
-
-    console.dir(shoppingList)
+    clearChildElements(selected_upgrade_list_holder)
 
     if (!shoppingList || shoppingList.length <= 0) {
         let element = document.createElement('tr')
@@ -40,25 +38,14 @@ const displayShoppingList = (shoppingList) => {
         return
     }
 
-    // items = {}
-    // 
-    // itemKeys = Object.keys(items)
-    // itemKeys = itemKeys.sort((a, b) => items[b] - items[a])
-    // 
-    // itemKeys.forEach(item => {
-    //     let i = items[item]
-    //     let element = createItemElement(item, i.amt, i.total)
-    //     shopping_list_holder.appendChild(element)
-    // })
-
     shoppingListItems.forEach(item => {
         let element = createItemElement(item.id, item.amt, item.total)
         shopping_list_holder.appendChild(element)
     })
-
-    // let upgrades = document.createElement('p')
-    // upgrades.innerText = 'Upgrades: ' + shoppingList.map(upgrade => upgrade.name).join(', ')
-    // shopping_list_holder.appendChild(upgrades)
+    
+    let upgrades = document.createElement('p')
+    upgrades.innerText = 'Selected Upgrades: ' + shoppingList.map(upgrade => upgrade.name).join(', ')
+    selected_upgrade_list_holder.appendChild(upgrades)
 }
 
 const modifyItem = (itemId) => {
@@ -95,8 +82,6 @@ const createItemElement = (item, amt, total) => {
     let itemData = upgrade_items.find(i => i.id === item)
 
     if (!itemData) {
-        console.dir(item)
-
         element.innerHTML = `
         <td>${item}</td>
         <td class="item_category">unset</td>
@@ -108,11 +93,6 @@ const createItemElement = (item, amt, total) => {
         return element
     }
 
-    /*
-        <div class="modifier" onClick="modifyItem('${item}', -1)">-</div>
-        <div>${amt}/${total}</div>
-        <div class="modifier" onClick="modifyItem('${item}', 1)">+</div>
-    */
     element.innerHTML = `
         <td>${itemData.display_name}</td>
         <td class="item_category">${itemData.category}</td>
@@ -149,31 +129,24 @@ const displayUpgradeList = (list) => {
 
     clearChildElements(upgrade_list_holder)
 
-    list.forEach(upgrade => {
-        let element = createUpgradeElement(upgrade)
+    list.forEach((upgrade, i) => {
+        let element = createUpgradeElement(upgrade, i)
         upgrade_list_holder.appendChild(element)
     })
 }
 
-const createUpgradeElement = (upgrade) => {
-    let button = `<button onclick="addToCart_button('${upgrade.id}')">Add to Cart</button>`
+const createUpgradeElement = (upgrade, i) => {
+    let button = `<button class="button-primary" onclick="addToCart_button('${upgrade.id}')">Add to Cart</button>`
 
     if (shoppingList.find(u => u.id === upgrade.id)) {
         button = `<button onclick="removeFromCart_button('${upgrade.id}')">Remove from Cart</button>`
     }
 
-    let element = document.createElement('div')
+    let element = document.createElement('tr')
     element.className = 'upgrade_element'
     element.innerHTML = `
-    <div class="row">
-        <p class="six columns">${upgrade.name}</p>
-        <div class="four columns">
-            ${Object.keys(upgrade.materials).map(material => `<p>${material} x${upgrade.materials[material]}</p>`).join('')}
-        </div>
-        <div class="two columns cart_button">
-            ${button}
-        </div>
-    </div>
+        <td>${upgrade.name}</td>
+        <td class="cart_button">${button}</td>
     `
 
     return element
@@ -183,11 +156,11 @@ const addToCart_button = (upgradeId) => {
     let upgrade = hideout_upgrades.find(u => u.id === upgradeId)
 
 
-    Object.keys(upgrade.materials).forEach(material => {
-        let item = shoppingListItems.find(i => i.id === material)
+    upgrade.materials.forEach(material => {
+        let item = shoppingListItems.find(i => i.id === material.id)
         if (!item) {
             item = {
-                id: material,
+                id: material.id,
                 amt: 0,
                 total: 0,
             }
@@ -195,12 +168,13 @@ const addToCart_button = (upgradeId) => {
             shoppingListItems.push(item)
         }
 
-        let amt = upgrade.materials[material]
+        let amt = material.amt
         item.amt += amt
         item.total += amt
     })
 
     shoppingList.push(upgrade)
+
     sortShoppingList()
     displayShoppingList(shoppingList)
 
@@ -210,8 +184,8 @@ const addToCart_button = (upgradeId) => {
 const removeFromCart_button = (upgradeId) => {
     let upgrade = shoppingList.find(u => u.id === upgradeId)
 
-    Object.keys(upgrade.materials).forEach(material => {
-        let item = shoppingListItems.find(i => i.id === material)
+    upgrade.materials.forEach(material => {
+        let item = shoppingListItems.find(i => i.id === material.id)
 
         if (!item) {
             console.error("Item is not on the shopping list for some reason!?!")
@@ -219,7 +193,7 @@ const removeFromCart_button = (upgradeId) => {
         }
 
         // Trying to decide on the logic...
-        let amt = upgrade.materials[material]
+        let amt = material.amt
         item.amt += amt
         item.total -= amt
 

@@ -6,8 +6,11 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel='stylesheet' href="css/style.css">
 
-    <script src="./src/upgrade_items.js"></script>
-    <script src="./src/hideout_upgrades.js"></script>
+    <link id="item_data" href="data/Tarkov Hideout Shopping List - Items.csv">
+    <link id="upgrade_data" href="data/Tarkov Hideout Shopping List - Upgrades.csv">
+
+    <script src="./data/upgrade_items.js"></script>
+    <script src="./data/hideout_upgrades.js"></script>
     <script src="./src/main.js"></script>
 </head>
 
@@ -24,16 +27,28 @@
                     </tr>
                 </thead>
                 <tbody id="shopping_list">
-
                 </tbody>
             </table>
+        </div>
+        <div class="container">
+            <div id="selected_upgrade_list" class="row"></div>
         </div>
         <div class="container">
             <h3>Upgrade List</h3>
             <div class="row">
                 <input id="upgrade_search_bar" type="text" placeholder="Search Upgrades...">
             </div>
-            <div id="upgrade_list"></div>
+            <table class="u-full-width">
+                <thead>
+                    <tr>
+                        <th>Upgrade Name</th>
+                        <th class="cart_button">Cart Button</th>
+                    </tr>
+                </thead>
+                <tbody id="upgrade_list">
+                    
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
