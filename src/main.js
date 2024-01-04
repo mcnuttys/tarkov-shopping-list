@@ -99,7 +99,7 @@ const createItemElement = (item, amt, total) => {
 
         element.innerHTML = `
         <td>${item}</td>
-        <td class="item_catagory">unset</td>
+        <td class="item_category">unset</td>
         <td class="item_amt" onClick="modifyItem('${item}')">
             <div>${amt}/${total}</div>
         </td>
@@ -115,7 +115,7 @@ const createItemElement = (item, amt, total) => {
     */
     element.innerHTML = `
         <td>${itemData.display_name}</td>
-        <td class="item_catagory">${itemData.catagory}</td>
+        <td class="item_category">${itemData.category}</td>
         <td class="item_amt" onClick="modifyItem('${item}')">
             <div>${amt}/${total}</div>
         </td>
