@@ -133,7 +133,7 @@ const createItemElement = (item, amt, total) => {
     }
 
     element.innerHTML = `
-        <td><img src="${itemData.item_icon}"></img></td>
+        <td><a href="${itemData.wiki_url}" alt="${itemData.display_name} Icon"><img class="item_image" src="${itemData.item_icon}"></img></a></td>
         <td><a href="${itemData.wiki_url}">${itemData.display_name}</a></td>
         <td class="item_category">${itemData.category}</td>
         <td class="item_amt" onClick="modifyItem('${item}')">

@@ -12,7 +12,11 @@ body {
     justify-content: right;
 }
 
-.item_element img {
+.item_image {
+    text-align: center;
+}
+
+img.item_image {
     display: block;
     margin-left: auto;
     margin-right: auto;
