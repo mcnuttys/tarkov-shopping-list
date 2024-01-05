@@ -5,6 +5,9 @@ let shoppingListItems = []
 let upgradeList = []
 
 window.onload = async () => {
+    // Load the saved shopping list
+    loadLocalStorage()
+
     // Display shopping list
     shopping_list_holder = document.querySelector('#shopping_list')
     selected_upgrade_list_holder = document.querySelector('#selected_upgrade_list')
@@ -15,6 +18,27 @@ window.onload = async () => {
     displayUpgradeList(hideout_upgrades)
 
     document.querySelector('#upgrade_search_bar').addEventListener('input', onUpgradeSearchChanged)
+}
+
+const loadLocalStorage = (clearStorage) => {
+    if (clearStorage)
+        localStorage.clear()
+
+    shoppingList = JSON.parse(localStorage.getItem('shoppingList'))
+    shoppingListItems = JSON.parse(localStorage.getItem('shoppingListItems'))
+
+    if (!shoppingList)
+        shoppingList = []
+    if (!shoppingListItems)
+        shoppingListItems = []
+
+    console.dir(shoppingList)
+    console.dir(shoppingListItems)
+}
+
+const saveLocalStorage = () => {
+    localStorage.setItem('shoppingList', JSON.stringify(shoppingList))
+    localStorage.setItem('shoppingListItems', JSON.stringify(shoppingListItems))
 }
 
 const clearChildElements = (element) => {
@@ -42,7 +66,7 @@ const displayShoppingList = (shoppingList) => {
         let element = createItemElement(item.id, item.amt, item.total)
         shopping_list_holder.appendChild(element)
     })
-    
+
     let upgrades = document.createElement('p')
     upgrades.innerText = 'Selected Upgrades: ' + shoppingList.map(upgrade => upgrade.name).join(', ')
     selected_upgrade_list_holder.appendChild(upgrades)
@@ -72,6 +96,7 @@ const modifyItem = (itemId) => {
     item.amt -= amt
     item.amt = Math.max(Math.min(item.amt, item.total), 0)
 
+    saveLocalStorage()
     displayShoppingList(shoppingList)
 }
 
@@ -155,7 +180,6 @@ const createUpgradeElement = (upgrade, i) => {
 const addToCart_button = (upgradeId) => {
     let upgrade = hideout_upgrades.find(u => u.id === upgradeId)
 
-
     upgrade.materials.forEach(material => {
         let item = shoppingListItems.find(i => i.id === material.id)
         if (!item) {
@@ -174,8 +198,9 @@ const addToCart_button = (upgradeId) => {
     })
 
     shoppingList.push(upgrade)
-
     sortShoppingList()
+
+    saveLocalStorage()
     displayShoppingList(shoppingList)
 
     refreshUpgradeList()
@@ -212,6 +237,8 @@ const removeFromCart_button = (upgradeId) => {
 
     let index = shoppingList.indexOf(upgrade)
     shoppingList.splice(index, 1)
+
+    saveLocalStorage()
     displayShoppingList(shoppingList)
 
     refreshUpgradeList()
