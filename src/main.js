@@ -8,6 +8,8 @@ window.onload = async () => {
     // Load the saved shopping list
     loadLocalStorage()
 
+    document.querySelector('#wipe_button').addEventListener('click', wipeShoppingList)
+
     // Display shopping list
     shopping_list_holder = document.querySelector('#shopping_list')
     selected_upgrade_list_holder = document.querySelector('#selected_upgrade_list')
@@ -20,10 +22,7 @@ window.onload = async () => {
     document.querySelector('#upgrade_search_bar').addEventListener('input', onUpgradeSearchChanged)
 }
 
-const loadLocalStorage = (clearStorage) => {
-    if (clearStorage)
-        localStorage.clear()
-
+const loadLocalStorage = () => {
     shoppingList = JSON.parse(localStorage.getItem('shoppingList'))
     shoppingListItems = JSON.parse(localStorage.getItem('shoppingListItems'))
 
@@ -47,8 +46,23 @@ const clearChildElements = (element) => {
     }
 }
 
+const wipeShoppingList = () => {
+    console.dir('test')
+    shoppingList = []
+    shoppingListItems = []
+
+    refreshUpgradeList()
+    refreshShoppingList()
+
+    localStorage.clear()
+}
+
 const sortShoppingList = () => {
     shoppingListItems = shoppingListItems.sort((a, b) => b.total - a.total)
+}
+
+const refreshShoppingList = () => {
+    displayShoppingList(shoppingListItems)
 }
 
 const displayShoppingList = (shoppingList) => {
