@@ -97,7 +97,7 @@ const createItemElement = (item, amt, total) => {
         <td>${itemData.display_name}</td>
         <td class="item_category">${itemData.category}</td>
         <td class="item_amt" onClick="modifyItem('${item}')">
-            <div>${amt}/${total}</div>
+            <div>${amt} (${total})</div>
         </td>
     `
 
