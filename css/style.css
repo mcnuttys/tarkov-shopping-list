@@ -1,5 +1,8 @@
 body {
     overflow-y: scroll;
+
+    background-color: black;
+    color: lightgray;
 }
 
 #upgrade_search_bar {
@@ -35,12 +38,12 @@ img.item_image {
 
 .item_amt {
     text-align: right;
-    background-color: white;
+    background-color: black;
     cursor: pointer;
 }
 
 .item_amt:hover {
-    background-color: lightgray;
+    background-color: rgb(30, 30, 30);
 }
 
 .item_amt .modifier {

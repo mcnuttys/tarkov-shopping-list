@@ -71,7 +71,7 @@ const displayShoppingList = (shoppingList) => {
 
     if (!shoppingList || shoppingList.length <= 0) {
         let element = document.createElement('tr')
-        element.innerHTML = '<td>There are no items in your shopping list!</td><td></td><td></td>'
+        element.innerHTML = '<td></td><td>There are no items in your shopping list!</td><td></td><td></td>'
         shopping_list_holder.appendChild(element)
         return
     }
