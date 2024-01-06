@@ -15,6 +15,18 @@ body {
     justify-content: right;
 }
 
+.upgrade_icon {
+    text-align: center;
+}
+
+#upgrade_list img.upgrade_icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-height: 40px;
+}
+
 .item_image {
     text-align: center;
 }
@@ -25,7 +37,6 @@ img.item_image {
     margin-right: auto;
 
     max-height: 40px;
-    border-radius: 4px;
 }
 
 .item_category {
@@ -42,6 +53,11 @@ img.item_image {
     cursor: pointer;
 }
 
+#shopping_list .upgrade_icon {
+    max-width: 40px;
+    max-height: 40px;
+}
+
 .item_amt:hover {
     background-color: rgb(30, 30, 30);
 }
@@ -50,5 +66,4 @@ img.item_image {
     cursor: pointer;
 
     user-select: none;
-    /* Standard syntax */
 }

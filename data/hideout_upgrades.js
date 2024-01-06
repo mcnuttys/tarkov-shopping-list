@@ -19,7 +19,8 @@ hideout_upgrades = [
                 "id": "millitary_corrugated_tube",
                 "amt": 3
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/7f/Air_Filtering_Unit_Portrait.png/"
     },
     {
         "id": "bitcoin_farm1",
@@ -45,7 +46,8 @@ hideout_upgrades = [
                 "id": "vpx_flash_storage_module",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/Bitcoin_Farm_Portrait.png/"
     },
     {
         "id": "bitcoin_farm2",
@@ -71,7 +73,8 @@ hideout_upgrades = [
                 "id": "millitary_power_filter",
                 "amt": 2
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/Bitcoin_Farm_Portrait.png/"
     },
     {
         "id": "bitcoin_farm3",
@@ -97,7 +100,8 @@ hideout_upgrades = [
                 "id": "6_sten_140_m_millitary_battery",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ea/Bitcoin_Farm_Portrait.png/"
     },
     {
         "id": "booze_generator1",
@@ -131,7 +135,8 @@ hideout_upgrades = [
                 "id": "pipe_grip_wrench",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f9/Booze_Generator_Portrait.png/"
     },
     {
         "id": "christmas_tree1",
@@ -149,7 +154,8 @@ hideout_upgrades = [
                 "id": "christmas_tree_ornament_violet",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/a/a6/Christmas_Tree_Portrait.png/"
     },
     {
         "id": "defective_wall_mop",
@@ -159,7 +165,8 @@ hideout_upgrades = [
                 "id": "fleece_fabric",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/Defective_Wall_Portrait.png/"
     },
     {
         "id": "defective_wall1",
@@ -169,7 +176,8 @@ hideout_upgrades = [
                 "id": "fierce_blow_sledgehammer",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/Defective_Wall_Portrait.png/"
     },
     {
         "id": "defective_wall2",
@@ -183,7 +191,8 @@ hideout_upgrades = [
                 "id": "toolset",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/Defective_Wall_Portrait.png/"
     },
     {
         "id": "defective_wall3",
@@ -221,7 +230,8 @@ hideout_upgrades = [
                 "id": "xenomorph_sealing_foam",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/Defective_Wall_Portrait.png/"
     },
     {
         "id": "generator1",
@@ -235,7 +245,8 @@ hideout_upgrades = [
                 "id": "spark_plug",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/Generator_Portrait.png/"
     },
     {
         "id": "generator2",
@@ -257,7 +268,8 @@ hideout_upgrades = [
                 "id": "electric_motor",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/Generator_Portrait.png/"
     },
     {
         "id": "generator3",
@@ -283,7 +295,8 @@ hideout_upgrades = [
                 "id": "electric_motor",
                 "amt": 3
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/02/Generator_Portrait.png/"
     },
     {
         "id": "gym1",
@@ -317,7 +330,8 @@ hideout_upgrades = [
                 "id": "insulating_tape",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/7/77/Gym_Portrait.png/"
     },
     {
         "id": "hall_of_fame1",
@@ -347,7 +361,8 @@ hideout_upgrades = [
                 "id": "round_pliers",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1f/Hall_of_Fame_Portrait.png/"
     },
     {
         "id": "hall_of_fame2",
@@ -389,7 +404,8 @@ hideout_upgrades = [
                 "id": "golden_rooster_figurine",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1f/Hall_of_Fame_Portrait.png/"
     },
     {
         "id": "hall_of_fame3",
@@ -427,7 +443,8 @@ hideout_upgrades = [
                 "id": "bronze_lion_figurine",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1f/Hall_of_Fame_Portrait.png/"
     },
     {
         "id": "heating1",
@@ -441,7 +458,8 @@ hideout_upgrades = [
                 "id": "classic_matches",
                 "amt": 2
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/Heating_Portrait.png/"
     },
     {
         "id": "heating2",
@@ -463,7 +481,8 @@ hideout_upgrades = [
                 "id": "hunting_matches",
                 "amt": 2
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/Heating_Portrait.png/"
     },
     {
         "id": "heating3",
@@ -485,7 +504,8 @@ hideout_upgrades = [
                 "id": "millitary_corrugated_tube",
                 "amt": 2
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d7/Heating_Portrait.png/"
     },
     {
         "id": "illumination1",
@@ -499,7 +519,8 @@ hideout_upgrades = [
                 "id": "crickent_lighter",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/83/Illumination_Portrait.png/"
     },
     {
         "id": "illumination2",
@@ -513,7 +534,8 @@ hideout_upgrades = [
                 "id": "bundle_of_wires",
                 "amt": 10
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/83/Illumination_Portrait.png/"
     },
     {
         "id": "illumination3",
@@ -535,7 +557,8 @@ hideout_upgrades = [
                 "id": "bundle_of_wires",
                 "amt": 6
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/8/83/Illumination_Portrait.png/"
     },
     {
         "id": "intelligence_center1",
@@ -553,7 +576,8 @@ hideout_upgrades = [
                 "id": "topographic_survey_map",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4c/Intelligence_Center_Portrait.png/"
     },
     {
         "id": "intelligence_center2",
@@ -575,7 +599,8 @@ hideout_upgrades = [
                 "id": "secure_flash_drive",
                 "amt": 3
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4c/Intelligence_Center_Portrait.png/"
     },
     {
         "id": "intelligence_center3",
@@ -605,7 +630,8 @@ hideout_upgrades = [
                 "id": "far_forward_gps_signal_amplifier_unit",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4c/Intelligence_Center_Portrait.png/"
     },
     {
         "id": "lavatory1",
@@ -631,7 +657,8 @@ hideout_upgrades = [
                 "id": "awl",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/09/Lavatory_Portrait.png/"
     },
     {
         "id": "lavatory2",
@@ -657,7 +684,8 @@ hideout_upgrades = [
                 "id": "electric_drill",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/09/Lavatory_Portrait.png/"
     },
     {
         "id": "lavatory3",
@@ -679,7 +707,8 @@ hideout_upgrades = [
                 "id": "toolset",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/09/Lavatory_Portrait.png/"
     },
     {
         "id": "library1",
@@ -713,7 +742,8 @@ hideout_upgrades = [
                 "id": "horse_figurine",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/2/23/Library_Portrait.png/"
     },
     {
         "id": "medstation1",
@@ -739,7 +769,8 @@ hideout_upgrades = [
                 "id": "bottle_of_ololo_multivitamins",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/94/Medstation_Portrait.png/"
     },
     {
         "id": "medstation2",
@@ -765,7 +796,8 @@ hideout_upgrades = [
                 "id": "medical_bloodset",
                 "amt": 2
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/94/Medstation_Portrait.png/"
     },
     {
         "id": "medstation3",
@@ -787,7 +819,8 @@ hideout_upgrades = [
                 "id": "ledx_skin_transilluminator",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/9/94/Medstation_Portrait.png/"
     },
     {
         "id": "nutrition_unit1",
@@ -809,7 +842,8 @@ hideout_upgrades = [
                 "id": "power_cord",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f5/Nutrition_Unit_Portrait.png/"
     },
     {
         "id": "nutrition_unit2",
@@ -831,7 +865,8 @@ hideout_upgrades = [
                 "id": "phase_control_relay",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f5/Nutrition_Unit_Portrait.png/"
     },
     {
         "id": "nutrition_unit3",
@@ -853,7 +888,8 @@ hideout_upgrades = [
                 "id": "smoked_chimney_drain_cleaner",
                 "amt": 2
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f5/Nutrition_Unit_Portrait.png/"
     },
     {
         "id": "rest_space1",
@@ -871,7 +907,8 @@ hideout_upgrades = [
                 "id": "classic_matches",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/16/Rest_Space_Portrait.png/"
     },
     {
         "id": "rest_space2",
@@ -893,7 +930,8 @@ hideout_upgrades = [
                 "id": "magnet",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/16/Rest_Space_Portrait.png/"
     },
     {
         "id": "rest_space3",
@@ -915,7 +953,8 @@ hideout_upgrades = [
                 "id": "power_cord",
                 "amt": 4
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/16/Rest_Space_Portrait.png/"
     },
     {
         "id": "scav_case1",
@@ -949,7 +988,8 @@ hideout_upgrades = [
                 "id": "lucky_scav_junk_box",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/0/00/Scav_case_Portrait.png/"
     },
     {
         "id": "security1",
@@ -963,7 +1003,8 @@ hideout_upgrades = [
                 "id": "construction_measuring_tape",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ef/Security_Portrait.png/"
     },
     {
         "id": "security2",
@@ -985,7 +1026,8 @@ hideout_upgrades = [
                 "id": "tp_200_tnt_brick",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ef/Security_Portrait.png/"
     },
     {
         "id": "security3",
@@ -1007,7 +1049,8 @@ hideout_upgrades = [
                 "id": "ssd_drive",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/ef/Security_Portrait.png/"
     },
     {
         "id": "shooting_range1",
@@ -1025,7 +1068,8 @@ hideout_upgrades = [
                 "id": "screw_nuts",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e4/Shooting_Range_Portrait.png/"
     },
     {
         "id": "shooting_range2",
@@ -1071,7 +1115,8 @@ hideout_upgrades = [
                 "id": "electric_drill",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e4/Shooting_Range_Portrait.png/"
     },
     {
         "id": "shooting_range3",
@@ -1113,7 +1158,8 @@ hideout_upgrades = [
                 "id": "tech_manual",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/e/e4/Shooting_Range_Portrait.png/"
     },
     {
         "id": "solar_power1",
@@ -1143,7 +1189,8 @@ hideout_upgrades = [
                 "id": "advanced_current_converter",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/f/f3/Solar_power_Portrait.png/"
     },
     {
         "id": "stash2",
@@ -1169,7 +1216,8 @@ hideout_upgrades = [
                 "id": "hand_drill",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bc/Stash_Portrait.png/"
     },
     {
         "id": "stash3",
@@ -1191,7 +1239,8 @@ hideout_upgrades = [
                 "id": "electric_drill",
                 "amt": 2
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bc/Stash_Portrait.png/"
     },
     {
         "id": "stash4",
@@ -1217,7 +1266,8 @@ hideout_upgrades = [
                 "id": "ratchet_wrench",
                 "amt": 2
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bc/Stash_Portrait.png/"
     },
     {
         "id": "vents1",
@@ -1227,7 +1277,8 @@ hideout_upgrades = [
                 "id": "roubles",
                 "amt": 25000
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bc/Vents_Portrait.png/"
     },
     {
         "id": "vents2",
@@ -1249,7 +1300,8 @@ hideout_upgrades = [
                 "id": "electric_motor",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bc/Vents_Portrait.png/"
     },
     {
         "id": "vents3",
@@ -1275,7 +1327,8 @@ hideout_upgrades = [
                 "id": "car_battery",
                 "amt": 4
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/b/bc/Vents_Portrait.png/"
     },
     {
         "id": "water_collector1",
@@ -1297,7 +1350,8 @@ hideout_upgrades = [
                 "id": "duct_tape",
                 "amt": 3
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/Water_Collector_Portrait.png/"
     },
     {
         "id": "water_collector2",
@@ -1319,7 +1373,8 @@ hideout_upgrades = [
                 "id": "kektape_duct_tape",
                 "amt": 2
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/Water_Collector_Portrait.png/"
     },
     {
         "id": "water_collector3",
@@ -1341,7 +1396,8 @@ hideout_upgrades = [
                 "id": "ratchet_wrench",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/4/4d/Water_Collector_Portrait.png/"
     },
     {
         "id": "weapon_rack1",
@@ -1375,7 +1431,8 @@ hideout_upgrades = [
                 "id": "metal_cutting_scissors",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/Weapon_Rack_Portrait.png/"
     },
     {
         "id": "weapon_rack2",
@@ -1417,7 +1474,8 @@ hideout_upgrades = [
                 "id": "set_of_files_master",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/Weapon_Rack_Portrait.png/"
     },
     {
         "id": "weapon_rack3",
@@ -1455,7 +1513,8 @@ hideout_upgrades = [
                 "id": "fireklean_gun_lube",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/d/d5/Weapon_Rack_Portrait.png/"
     },
     {
         "id": "workbench1",
@@ -1473,7 +1532,8 @@ hideout_upgrades = [
                 "id": "leatherman_multitool",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Workbench_Portrait.png/"
     },
     {
         "id": "workbench2",
@@ -1499,7 +1559,8 @@ hideout_upgrades = [
                 "id": "set_of_files_master",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Workbench_Portrait.png/"
     },
     {
         "id": "workbench3",
@@ -1521,6 +1582,7 @@ hideout_upgrades = [
                 "id": "fireklean_gun_lube",
                 "amt": 1
             }
-        ]
+        ],
+        "icon_url": "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/1c/Workbench_Portrait.png/"
     }
 ]

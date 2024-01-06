@@ -71,13 +71,13 @@ const displayShoppingList = (shoppingList) => {
 
     if (!shoppingList || shoppingList.length <= 0) {
         let element = document.createElement('tr')
-        element.innerHTML = '<td></td><td>There are no items in your shopping list!</td><td></td><td></td>'
+        element.innerHTML = '<td></td><td>There are no items in your shopping list!<td></td></td><td></td><td></td>'
         shopping_list_holder.appendChild(element)
         return
     }
 
     shoppingListItems.forEach(item => {
-        let element = createItemElement(item.id, item.amt, item.total)
+        let element = createItemElement(item)
         shopping_list_holder.appendChild(element)
     })
 
@@ -114,30 +114,42 @@ const modifyItem = (itemId) => {
     displayShoppingList(shoppingList)
 }
 
-const createItemElement = (item, amt, total) => {
+const createItemElement = (item) => {
     let element = document.createElement('tr')
+    element.id = item.id
     element.className = 'item_element'
 
-    let itemData = upgrade_items.find(i => i.id === item)
+    let itemData = upgrade_items.find(i => i.id === item.id)
 
     if (!itemData) {
         element.innerHTML = `
-        <td>${item}</td>
+        <td>${item.id}</td>
         <td class="item_category">unset</td>
-        <td class="item_amt" onClick="modifyItem('${item}')">
-            <div>${amt}/${total}</div>
+        <td></td>
+        <td class="item_amt" onClick="modifyItem('${item.id}')">
+            <div>${item.amt}/${item.total}</div>
         </td>
         `
 
         return element
     }
 
+    let upgrade_icons = []
+    item.upgrades.forEach(upgrade => {
+        let icon_url = hideout_upgrades.find(u => u.id === upgrade).icon_url
+
+        if (icon_url && !upgrade_icons.find(s => s.url === icon_url)) {
+            upgrade_icons.push({ id: upgrade, url: icon_url })
+        }
+    })
+
     element.innerHTML = `
         <td><a href="${itemData.wiki_url}" alt="${itemData.display_name} Icon"><img class="item_image" src="${itemData.item_icon}"></img></a></td>
         <td><a href="${itemData.wiki_url}">${itemData.display_name}</a></td>
-        <td class="item_category">${itemData.category}</td>
-        <td class="item_amt" onClick="modifyItem('${item}')">
-            <div>${amt} (${total})</div>
+        <td class="upgrade_row">${upgrade_icons.map(url => `<a href="#${url.id}"><img class="upgrade_icon" src=${url.url}/></a>`).join('')}</td>
+        <td class="item_category"> ${itemData.category}</td>
+        <td class="item_amt" onClick="modifyItem('${item.id}')">
+            <div>${item.amt} (${item.total})</div>
         </td>
     `
 
@@ -176,15 +188,17 @@ const displayUpgradeList = (list) => {
 }
 
 const createUpgradeElement = (upgrade, i) => {
-    let button = `<button class="button-primary" onclick="addToCart_button('${upgrade.id}')">Add to Cart</button>`
+    let button = `<button class="button-primary" onclick = "addToCart_button('${upgrade.id}')">Add to Cart</button> `
 
     if (shoppingList.find(u => u.id === upgrade.id)) {
-        button = `<button onclick="removeFromCart_button('${upgrade.id}')">Remove from Cart</button>`
+        button = `<button onclick = "removeFromCart_button('${upgrade.id}')">Remove from Cart</button> `
     }
 
     let element = document.createElement('tr')
+    element.id = upgrade.id
     element.className = 'upgrade_element'
     element.innerHTML = `
+        <td> <img class="upgrade_icon" src="${upgrade.icon_url}" alt="${upgrade.name} Icon" /></td>
         <td>${upgrade.name}</td>
         <td class="cart_button">${button}</td>
     `
@@ -202,6 +216,7 @@ const addToCart_button = (upgradeId) => {
                 id: material.id,
                 amt: 0,
                 total: 0,
+                upgrades: []
             }
 
             shoppingListItems.push(item)
@@ -210,6 +225,8 @@ const addToCart_button = (upgradeId) => {
         let amt = material.amt
         item.amt += amt
         item.total += amt
+
+        item.upgrades.push(upgrade.id)
     })
 
     shoppingList.push(upgrade)
@@ -248,6 +265,9 @@ const removeFromCart_button = (upgradeId) => {
             let itemIndex = shoppingListItems.indexOf(item)
             shoppingListItems.splice(itemIndex, 1)
         }
+
+        let index = item.upgrades.indexOf(upgrade.id)
+        item.upgrades.splice(index, 1)
     })
 
     let index = shoppingList.indexOf(upgrade)
