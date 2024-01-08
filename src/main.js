@@ -4,6 +4,9 @@ let shoppingList = []
 let shoppingListItems = []
 let upgradeList = []
 
+let catagoryFilter, amtFilter
+let lastFilter
+
 window.onload = async () => {
     // Load the saved shopping list
     loadLocalStorage()
@@ -20,6 +23,84 @@ window.onload = async () => {
     displayUpgradeList(hideout_upgrades)
 
     document.querySelector('#upgrade_search_bar').addEventListener('input', onUpgradeSearchChanged)
+
+    let uarr = '▲'
+    let darr = '▼'
+    catagoryFilter = document.querySelector('#item_category_filter')
+    amtFilter = document.querySelector('#item_amt_filter')
+    lastFilter = amtFilter
+
+    catagoryFilter.addEventListener('click', () => {
+        let arr = catagoryFilter.querySelector('b')
+        if (lastFilter && lastFilter != catagoryFilter) {
+            lastFilter.querySelector('b').innerHTML = ''
+        }
+
+        let current = arr.innerHTML
+        let sortDirection = 1
+        if (!current) {
+            arr.innerHTML = darr
+            sortDirection = -1
+        } else {
+            if (arr.innerHTML === darr) {
+                arr.innerHTML = uarr
+                sortDirection = 1
+            } else {
+                arr.innerHTML = darr
+                sortDirection = -1
+            }
+        }
+
+        sortShoppingList((a, b) => {
+            a = upgrade_items.find(i => i.id === a.id)
+            b = upgrade_items.find(i => i.id === b.id)
+            if (a.category < b.category)
+                return 1 * sortDirection
+
+            if (a.category > b.category)
+                return -1 * sortDirection
+
+            return 0
+        })
+        refreshShoppingList()
+
+        lastFilter = catagoryFilter
+    })
+
+    amtFilter.addEventListener('click', () => {
+        let arr = amtFilter.querySelector('b')
+        if (lastFilter && lastFilter != amtFilter) {
+            lastFilter.querySelector('b').innerHTML = ''
+        }
+
+        let current = arr.innerHTML
+        let sortDirection = 1
+        if (!current) {
+            arr.innerHTML = darr
+            sortDirection = -1
+        } else {
+            if (arr.innerHTML === darr) {
+                arr.innerHTML = uarr
+                sortDirection = 1
+            } else {
+                arr.innerHTML = darr
+                sortDirection = -1
+            }
+        }
+
+        sortShoppingList((a, b) => {
+            if (a.amt < b.amt)
+                return -1 * sortDirection
+
+            if (a.amt > b.amt)
+                return 1 * sortDirection
+
+            return 0
+        })
+        refreshShoppingList()
+
+        lastFilter = amtFilter
+    })
 }
 
 const loadLocalStorage = () => {
@@ -31,8 +112,7 @@ const loadLocalStorage = () => {
     if (!shoppingListItems)
         shoppingListItems = []
 
-    console.dir(shoppingList)
-    console.dir(shoppingListItems)
+    sortShoppingList()
 }
 
 const saveLocalStorage = () => {
@@ -47,7 +127,6 @@ const clearChildElements = (element) => {
 }
 
 const wipeShoppingList = () => {
-    console.dir('test')
     shoppingList = []
     shoppingListItems = []
 
@@ -57,17 +136,26 @@ const wipeShoppingList = () => {
     localStorage.clear()
 }
 
-const sortShoppingList = () => {
-    shoppingListItems = shoppingListItems.sort((a, b) => b.total - a.total)
+let lastSortFunction = undefined
+const sortShoppingList = (sortFunction) => {
+    if (!sortFunction && !lastSortFunction)
+        sortFunction = (a, b) => b.amt - a.amt
+
+    if (!sortFunction && lastSortFunction)
+        sortFunction = lastSortFunction
+
+    shoppingListItems = shoppingListItems.sort(sortFunction)
+    lastSortFunction = sortFunction
 }
 
 const refreshShoppingList = () => {
+    sortShoppingList()
     displayShoppingList(shoppingListItems)
 }
 
 const displayShoppingList = (shoppingList) => {
     clearChildElements(shopping_list_holder)
-    clearChildElements(selected_upgrade_list_holder)
+    // clearChildElements(selected_upgrade_list_holder)
 
     if (!shoppingList || shoppingList.length <= 0) {
         let element = document.createElement('tr')
@@ -81,9 +169,9 @@ const displayShoppingList = (shoppingList) => {
         shopping_list_holder.appendChild(element)
     })
 
-    let upgrades = document.createElement('p')
-    upgrades.innerText = 'Selected Upgrades: ' + shoppingList.map(upgrade => upgrade.name).join(', ')
-    selected_upgrade_list_holder.appendChild(upgrades)
+    // let upgrades = document.createElement('p')
+    // upgrades.innerText = 'Selected Upgrades: ' + shoppingList.map(upgrade => upgrade.name).join(', ')
+    // selected_upgrade_list_holder.appendChild(upgrades)
 }
 
 const modifyItem = (itemId) => {
@@ -111,13 +199,17 @@ const modifyItem = (itemId) => {
     item.amt = Math.max(Math.min(item.amt, item.total), 0)
 
     saveLocalStorage()
-    displayShoppingList(shoppingList)
+
+    refreshShoppingList()
 }
 
 const createItemElement = (item) => {
     let element = document.createElement('tr')
     element.id = item.id
     element.className = 'item_element'
+
+    if (item.amt <= 0)
+        element.className += ' completed_item'
 
     let itemData = upgrade_items.find(i => i.id === item.id)
 

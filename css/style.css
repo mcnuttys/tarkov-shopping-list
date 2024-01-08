@@ -36,7 +36,16 @@ img.item_image {
     margin-left: auto;
     margin-right: auto;
 
-    max-height: 40px;
+    max-height: 50px;
+}
+
+.item_filter {
+    cursor: pointer;
+    user-select: none;
+}
+
+.item_category_header {
+    text-align: right;
 }
 
 .item_category {
@@ -49,8 +58,11 @@ img.item_image {
 
 .item_amt {
     text-align: right;
-    background-color: black;
     cursor: pointer;
+}
+
+.completed_item {
+    background-color: rgb(10, 10, 10);
 }
 
 #shopping_list .upgrade_icon {
