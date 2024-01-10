@@ -385,7 +385,7 @@ hideout_upgrades = [
                 "amt": 2
             },
             {
-                "id": "ortodontox_toothpaste",
+                "id": "tube_of_poxeram_cold_welding",
                 "amt": 2
             },
             {
